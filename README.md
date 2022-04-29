@@ -1,23 +1,4 @@
-# `cross-var`
-
-[![NPM](https://nodei.co/npm/cross-var.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cross-var/) 
-[![NPM](https://nodei.co/npm-dl/cross-var.png?months=9&height=3)](https://nodei.co/npm/cross-var/)
-
-[![npm version](https://img.shields.io/npm/v/cross-var.svg)](https://www.npmjs.com/package/cross-var)
-[![npm license](https://img.shields.io/npm/l/cross-var.svg)](https://www.npmjs.com/package/cross-var)
-[![npm download](https://img.shields.io/npm/dm/cross-var.svg)](https://www.npmjs.com/package/cross-var)
-[![npm download](https://img.shields.io/npm/dt/cross-var.svg)](https://www.npmjs.com/package/cross-var)
-[![Package Quality](http://npm.packagequality.com/shield/cross-var.svg)](http://packagequality.com/#?package=cross-var)
-[![Inline docs](http://inch-ci.org/github/elijahmanor/cross-var.svg?branch=master)](http://inch-ci.org/github/elijahmanor/cross-var)
-[![star this repo](http://githubbadges.com/star.svg?user=HansHammel&repo=cross-var&style=flat&color=fff&background=007ec6)](https://github.com/elijahmanor/cross-var)
-[![fork this repo](http://githubbadges.com/fork.svg?user=HansHammel&repo=cross-var&style=flat&color=fff&background=007ec6)](https://github.com/elijahmanor/cross-var/fork)
-
-[![david dependency](https://img.shields.io/david/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
-[![david devDependency](https://img.shields.io/david/dev/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
-[![david optionalDependency](https://img.shields.io/david/optional/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
-[![david peerDependency](https://img.shields.io/david/peer/elijahmanor/cross-var.svg)](https://david-dm.org/elijahmanor/cross-var)
-[![npms score](https://badges.npms.io/cross-var.svg)](https://www.npmjs.com/package/cross-var)
-[![Known Vulnerabilities](https://snyk.io/test/github/elijahmanor/cross-var/badge.svg)](https://snyk.io/test/github/elijahmanor/cross-var)
+# `x-var`
 
 ## Overview
 
@@ -55,9 +36,9 @@ Hello World
 ```
 However, this won't work on Windows... because it expects the variables to be surrounded by percent signs, so we can change our script just slightly.
 
-### `cross-var` to the Rescue!
+### `x-var` to the Rescue!
 
-The goal of `cross-var` is to let you use one script syntax to work either on a **Mac OS X/Linux (bash)** or **Windows**. Reference the [Usage]() documention below on how to use `cross-var` in your scripts.
+The goal of `x-var` is to let you use one script syntax to work either on a **Mac OS X/Linux (bash)** or **Windows**. Reference the [Usage]() documention below on how to use `.x-var` in your scripts.
 
 ## Usage
 
@@ -70,10 +51,10 @@ The goal of `cross-var` is to let you use one script syntax to work either on a 
     "port": "1337"
   },
   "scripts": {
-    "prebuild": "cross-var rimraf public/$npm_package_version",
-    "build:html": "cross-var jade --obj data.json src/index.jade --out public/$npm_package_version/",
-    "server:create": "cross-var http-server public/$npm_package_version -p $npm_package_config_port",
-    "server:launch": "cross-var opn http://localhost:$npm_package_config_port"
+    "prebuild": "x-var rimraf public/$npm_package_version",
+    "build:html": "x-var jade --obj data.json src/index.jade --out public/$npm_package_version/",
+    "server:create": "x-var http-server public/$npm_package_version -p $npm_package_config_port",
+    "server:launch": "x-var opn http://localhost:$npm_package_config_port"
   }
 }
 ```
@@ -84,8 +65,8 @@ The goal of `cross-var` is to let you use one script syntax to work either on a 
 {
   "version": "1.0.0",
   "scripts": {
-    "build:css": "cross-var \"node-sass src/index.scss | postcss -c .postcssrc.json | cssmin > public/$npm_package_version/index.min.css\"",
-    "build:js": "cross-var \"mustache data.json src/index.mustache.js | uglifyjs > public/$npm_package_version/index.min.js\"",
+    "build:css": "x-var \"node-sass src/index.scss | postcss -c .postcssrc.json | cssmin > public/$npm_package_version/index.min.css\"",
+    "build:js": "x-var \"mustache data.json src/index.mustache.js | uglifyjs > public/$npm_package_version/index.min.js\"",
   }
 }
 ```
