@@ -1,5 +1,19 @@
 # `x-var`
 
+## Purpose
+
+The main purpose of this package is the same as the main purpose of the
+[`cross-var`](https://www.npmjs.com/package/cross-var)
+As the `cross-var` package is derelict and has not been updated for more than five years, this package serves as a replacement.
+
+## Changes
+
+### v0.0.1
+* replace `@babel` with `typescript` and move it to devDependencies
+* fix stderr and stdout
+* fix exit code
+* upgrade `cross-spawn`
+
 ## Overview
 
 When using `npm scripts` it creates a lot of environment variables that are available for you to leverage when executing scripts.
