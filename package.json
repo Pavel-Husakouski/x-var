@@ -33,5 +33,10 @@
     "@types/node": "^10.17.60",
     "@types/cross-spawn": "^6.0.6",
     "typescript": "^5.3.3"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "dist/index.js",
+    "README.md"
+  ]
 }
