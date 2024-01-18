@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import './package.json';
 import * as spawn from "cross-spawn";
 import * as exit from 'exit';
 

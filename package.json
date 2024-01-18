@@ -2,9 +2,9 @@
   "name": "x-var",
   "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "x-var": "./index.js"
+    "x-var": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
