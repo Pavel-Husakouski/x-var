@@ -1,0 +1,10 @@
+{
+  "name": "passed",
+  "private": "true",
+  "scripts": {
+    "test": "x-var echo \\$npm_package_name"
+  },
+  "dependencies": {
+    "x-var": "file://.."
+  }
+}

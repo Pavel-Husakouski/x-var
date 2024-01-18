@@ -1,3 +1,4 @@
 dist
 node_modules
 .idea
+test/package-lock.json

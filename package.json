@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "pretest": "npm run build",
+    "test": "cd test && npm install && npm run test"
   },
   "author": "Pavel Husakouski",
   "license": "MIT",
