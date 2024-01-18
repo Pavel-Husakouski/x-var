@@ -6,13 +6,13 @@ The main purpose of this package is the same as the main purpose of the
 [`cross-var`](https://www.npmjs.com/package/cross-var)
 As the `cross-var` package is derelict and has not been updated for more than five years, this package serves as a replacement.
 
-## Changes
+## Difference with the cross-var package
 
-### v0.0.1
 * replace `@babel` with `typescript` and move it to devDependencies
 * fix stderr and stdout
 * fix exit code
 * upgrade `cross-spawn`
+* add test
 
 ## Overview
 
