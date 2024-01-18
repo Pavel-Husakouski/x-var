@@ -1,6 +1,6 @@
 {
   "name": "x-var",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -26,12 +26,12 @@
     "url": "https://github.com/pavel-husakouski/x-var/issues"
   },
   "dependencies": {
-    "cross-spawn": "^6.0.5",
+    "cross-spawn": "^7.0.3",
     "exit": "^0.1.2"
   },
   "devDependencies": {
     "@types/node": "^10.17.60",
-    "@types/cross-spawn": "^6.0.2",
-    "typescript": "^4.6.4"
+    "@types/cross-spawn": "^6.0.6",
+    "typescript": "^5.3.3"
   }
 }
