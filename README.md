@@ -23,7 +23,7 @@ If you'd like to take a look at all of the variables then you can run `npm run e
 ```
 > npm run env
 
-npm_package_name=cross-var
+npm_package_name=x-var
 npm_package_author_name=Elijah Manor
 npm_package_version=1.0.0
 ... lots more ...
