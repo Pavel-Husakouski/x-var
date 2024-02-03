@@ -1,10 +1,11 @@
 {
   "name": "x-var",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "x-var": "dist/index.js"
+    "x-var": "dist/x-var.js",
+    "x-env": "dist/x-env.js"
   },
   "scripts": {
     "build": "tsc",
@@ -31,13 +32,18 @@
     "exit": "^0.1.2"
   },
   "devDependencies": {
-    "@types/node": "^10.17.60",
     "@types/cross-spawn": "^6.0.6",
+    "@types/exit": "^0.1.33",
+    "@types/node": "^10.17.60",
+    "dotenv": "^16.4.1",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "dotenv": "^16.4.1"
   },
   "files": [
     "LICENSE",
-    "dist/index.js",
+    "dist/",
     "README.md"
   ]
 }

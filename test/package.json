@@ -1,8 +1,12 @@
 {
-  "name": "passed",
+  "name": "passed-package",
   "private": "true",
   "scripts": {
-    "test": "x-var echo \\$npm_package_name"
+    "test": "npm run test:var && npm run test:env1 && npm run test:env2 && npm run test:env:implicit",
+    "test:var": "x-var echo \\$npm_package_name",
+    "test:env1": "x-env -e=./.env-explicit echo \\$npm_package_name \\$TEST",
+    "test:env2": "x-env -e ./.env-explicit echo \\$npm_package_name \\$TEST",
+    "test:env:implicit": "x-env echo \\$npm_package_name \\$TEST"
   },
   "dependencies": {
     "x-var": "file://.."
