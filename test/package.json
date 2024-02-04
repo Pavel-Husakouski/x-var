@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test:unit": "node --loader ts-node/esm --test specs/interpolate.spec.ts"
+    "test": "node --loader ts-node/esm --test specs/index.ts"
   },
   "repository": {
     "type": "git",
