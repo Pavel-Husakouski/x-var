@@ -45,7 +45,12 @@ When a `.env` files are used, there is a possibility to use them with `x-env` ut
   }
 }
 ```
-Note: The `x-env` utility just loads the `.env` file and executes the command. The `-e` option is used to specify the `.env` file.
+Note: 
+* The `x-env` utility just loads the `.env` file and executes the command. 
+* The `-e` option is used to specify the `.env` file.
+* `dotenv` package is used under the hood. So, almost all capabilities of this packages are kept.
+
+Warning - the `.env` is loaded directly into `process.env` which makes all variables to be visible to the target application or script. If the `.env` is used by the target application, consider to use `x-var` to avoid conflicts.
 
 Generally speaking, the `x-env` utility should be used for the most of the cases. The `x-var` should be used to avoid using `.env` files.
 
@@ -56,4 +61,5 @@ Generally speaking, the `x-env` utility should be used for the most of the cases
 * fix exit code
 * upgrade `cross-spawn`
 * add test
-* add x-env utility
+* add x-env utility to load `.env` files
+* fix the partial replacement of the variables
