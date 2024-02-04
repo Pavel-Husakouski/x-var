@@ -4,6 +4,7 @@
     "module": "commonjs",
     "target": "esnext",
     "moduleResolution": "node",
+    "declaration": true,
     "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": false,

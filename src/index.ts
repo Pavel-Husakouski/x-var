@@ -1,3 +1,1 @@
-#!/usr/bin/env node
-
-import './x-var';
+export * from './interpolate';
