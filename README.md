@@ -63,3 +63,4 @@ Generally speaking, the `x-env` utility should be used for the most of the cases
 * add test
 * add x-env utility to load `.env` files
 * fix the partial replacement of the variables
+* capability to set environment variables in the command line
