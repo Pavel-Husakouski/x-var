@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node --loader ts-node/esm --test specs/index.ts",
-    "x-var": "x-var",
+    "x-var": "TEST=value $(echo \\$TEST)",
     "x-env": "x-env"
   },
   "repository": {

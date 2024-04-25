@@ -1,8 +1,6 @@
 # x-var
 
-## Purpose
-
-Maintaining `npm scripts` that work on both **macOS/Linux (bash)** and **Windows** is a hassle. This is because the two operating systems have different syntax for environment variables. Some utilities accept variables, while others accept only command line arguments. The solution is the `x-var` package.
+`cross-var` revamped! Use same env var syntax under Linux and Windows. `.env` supported!
 
 ## Source of variables
 
