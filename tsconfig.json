@@ -13,8 +13,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "types": [
-      "node",
-      "cross-spawn"
+      "node"
     ],
     "lib": [
       "esnext"
