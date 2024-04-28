@@ -30,12 +30,10 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "dotenv": "^16.4.5",
-    "exit": "^0.1.2"
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",
-    "@types/exit": "^0.1.33",
     "@types/node": "^10.17.60",
     "typescript": "^5.3.3"
   },
