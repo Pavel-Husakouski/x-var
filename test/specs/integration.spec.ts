@@ -29,39 +29,39 @@ describe('integration', () => {
     });
 
     it('x-var should read variable from the command line', () => {
-        const test = script('x-var TEST=passed! echo \\$TEST');
+        const test = script('x-var TEST=passed! "echo $TEST"');
 
         expect(test).to.eq('passed!');
     });
 
     it('x-var should read variable from the process env', () => {
         process.env.TEST = 'passed!';
-        const test = script('x-var echo \\$TEST');
+        const test = script('x-var "echo $TEST"');
 
         expect(test).to.eq('passed!');
     });
 
     it('x-env should read variable from the command line', () => {
-        const test = script('x-env TEST=passed! echo \\$TEST');
+        const test = script('x-env TEST=passed! "echo $TEST"');
 
         expect(test).to.eq('passed!');
     });
 
     it('x-env should read variable from the process env', () => {
         process.env.TEST = 'passed!';
-        const test = script('x-env echo \\$TEST');
+        const test = script('x-env "echo $TEST"');
 
         expect(test).to.eq('passed!');
     });
 
     it('x-env should read variable from the local .env file', () => {
-        const test = script('x-env echo \\$TEST');
+        const test = script('x-env "echo $TEST"');
 
         expect(test).to.eq('PASSED IMPLICIT');
     });
 
     it('x-env should read variable from the .env file by the custom path', () => {
-        const test = script('x-env -e=./.env-explicit echo \\$TEST');
+        const test = script('x-env -e=./.env-explicit "echo $TEST"');
 
         expect(test).to.eq('PASSED EXPLICIT');
     });
