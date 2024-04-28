@@ -29,8 +29,9 @@
     "url": "https://github.com/pavel-husakouski/x-var/issues"
   },
   "dependencies": {
-    "cross-spawn": "^7.0.3",
-    "dotenv": "^16.4.5"
+    "@types/shelljs": "^0.8.15",
+    "dotenv": "^16.4.5",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",

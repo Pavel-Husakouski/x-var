@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as spawn from 'cross-spawn';
 import { interpolate } from './interpolate';
 import { extractArgs } from './parse';
+import * as shell from 'shelljs';
 
 function main() {
     const [cmdLine, path, env] = extractArgs(process.argv.slice(2));
@@ -13,10 +13,9 @@ function main() {
         process.exit(1);
     }
 
-    const [command, ...args] = interpolate(cmdLine, {...process.env, ...env});
-    const proc = spawn.sync(command, args, { stdio: 'inherit' });
+    const newCommandLine = interpolate(cmdLine, { ...process.env, ...env });
 
-    process.exit(proc.status);
+    return shell.exec(newCommandLine.join(' ')).code;
 }
 
 main();
