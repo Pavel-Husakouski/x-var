@@ -3,8 +3,20 @@ import { describe, it } from 'node:test';
 import { interpolate } from 'x-var';
 
 describe('interpolate', () => {
-    it('should replace variables', () => {
-        const x = interpolate(['$test'], { test: 'hello' });
+    it('should replace variables linux style', () => {
+        const x = interpolate(['$test'], { test: 'hello' }, 'linux');
+
+        expect(x).to.deep.eq(['hello']);
+    });
+
+    it('should replace variables linux style escaped under windows', () => {
+        const x = interpolate(['\\$test'], { test: 'hello' }, 'win32');
+
+        expect(x).to.deep.eq(['hello']);
+    });
+
+    it('should replace variables windows style', () => {
+        const x = interpolate(['%test%'], { test: 'hello' });
 
         expect(x).to.deep.eq(['hello']);
     });
