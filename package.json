@@ -29,11 +29,11 @@
     "url": "https://github.com/pavel-husakouski/x-var/issues"
   },
   "dependencies": {
-    "@types/shelljs": "^0.8.15",
     "dotenv": "^16.4.5",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
+    "@types/shelljs": "^0.8.15",
     "@types/node": "^10.17.60",
     "typescript": "^5.3.3"
   },
