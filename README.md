@@ -1,12 +1,12 @@
 # x-var
 
-`cross-var` revamped! Use same env var syntax under Linux and Windows. `.env` supported!
+`cross-var` and `cross-env` revamped! Same syntax under Linux and Windows. `.env` supported!
 
 # Capabilities
 
-* Use the same syntax for all operating systems
-* Load `.env` files
-* Set environment variables in the command line for all operating systems
+* Use the same syntax for all operating systems [Use the same syntax for all operating systems](#use-the-same-syntax-for-all-operating-systems)
+* Load `.env` files, see [env files](#env-files)
+* Set environment variables in the command line for all operating systems (both `x-var` and `x-env`)
 * Postpone the variable replacement
 
 # Use the same syntax for all operating systems
@@ -18,7 +18,7 @@ Look at the examples below. If you're Linux addicted:
 ```json
 {
   "scripts": {
-    "version": "x-var echo \\$npm_package_version%"
+    "version": "x-var echo \\$npm_package_version"
   }
 }
 ```
@@ -46,7 +46,7 @@ There is a bunch of sources of variables:
 All these variables are available in the `npm scripts`.
 Execute `npm run env` to see the list of available variables.
 
-## .env files
+## env files
 
 Some projects use .env files, i.e.
 * `.env` - default variables
@@ -113,16 +113,44 @@ TEST=PASSED x-var echo \$TEST
 ```
 In this case the variable is not replaced by the shell, but by the `x-var` package.
 
+## Similar packages
+
+* [cross-var](https://www.npmjs.com/package/cross-var) - the original package
+* [cross-env](https://www.npmjs.com/package/cross-env) - the most popular package
+* [dotenv](https://www.npmjs.com/package/dotenv) - the package to load `.env` files
+
+## Difference with the cross-env package
+
+* The `cross-env` package is barely maintained
+* The cross-env package is unable to load `.env` files. `x-var` uses `dotenv` under the hood.
+* This does not work in cross-env and it works in `x-var`:
+    ```bash
+    cross-env TEST=value echo \$TEST
+    ```
+* And this
+    ```bash
+    cross-env TEST=value echo %TEST%
+    ```
+* Cross-env relies on unmaintained `cross-spawn` package. The `x-var` uses `shell.js` package.
+
 ## Difference with the cross-var package
 
-* replace `@babel` with `typescript` and move it to devDependencies
-* fix stderr and stdout
-* fix exit code
-* upgrade `cross-spawn`
-* add test
-* add x-env utility to load `.env` files
-* fix the partial replacement of the variables
-* capability to set environment variables in the command line
-* fix stderr, again - replace the `cross-spawn` with the `shell.js`
-* correct escaping of the dollar `$` sign under Windows
+* the `cross-var` package in unmaintained and has dozens of vulnerabilities
+* replaced `@babel` with `typescript` and move it to devDependencies
+* fixed stderr and stdout
+* fixed exit code
+* added tests
+* added `x-env` utility to load `.env` files
+* fixed the partial replacement of the variables
+* added capability to set environment variables in the command line
+* dropped exit package
+* fixed stderr, again - by replacing the `cross-spawn` with the `shell.js`
+* added escaping of the dollar `$` sign under Windows
 
+# Drawbacks
+
+The `x-var` package is not a silver bullet. It has some drawbacks:
+* it uses naive but aggressive replacement of the variables
+* some things might be tricky to implement using `x-var`
+
+Let me know if you have any issues or suggestions.
