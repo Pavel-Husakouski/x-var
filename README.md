@@ -117,6 +117,7 @@ In this case the variable is not replaced by the shell, but by the `x-var` packa
 
 * [cross-var](https://www.npmjs.com/package/cross-var) - the original package
 * [cross-env](https://www.npmjs.com/package/cross-env) - the most popular package
+* [env-cmd](https://www.npmjs.com/package/env-cmd) - the package to load `.env` files
 * [dotenv](https://www.npmjs.com/package/dotenv) - the package to load `.env` files
 
 ## Difference with the cross-env package
@@ -133,15 +134,26 @@ In this case the variable is not replaced by the shell, but by the `x-var` packa
     ```
 * Cross-env relies on unmaintained `cross-spawn` package. The `x-var` uses `shell.js` package.
 
+## Difference with the env-cmd package
+
+* env-cmd last published 4 years ago at the moment of writing
+* it requires the `.env` file to be in the current directory otherwise throws errors
+```bash
+Error: Failed to find .env file at default paths
+```
+* is capable to load variables from the `.rc` files
+
 ## Difference with the cross-var package
 
-* the `cross-var` package in unmaintained and has dozens of vulnerabilities
-* replaced `@babel` with `typescript` and move it to devDependencies
+The `cross-var` package in unmaintained and contains i.e. `@babel` in the dependencies
+
+Changes:
+* replaced `@babel` with `typescript`
 * fixed stderr and stdout
 * fixed exit code
 * added tests
 * added `x-env` utility to load `.env` files
-* fixed the partial replacement of the variables
+* fixed partial replacement of variables
 * added capability to set environment variables in the command line
 * dropped exit package
 * fixed stderr, again - by replacing the `cross-spawn` with the `shell.js`
@@ -150,7 +162,7 @@ In this case the variable is not replaced by the shell, but by the `x-var` packa
 # Drawbacks
 
 The `x-var` package is not a silver bullet. It has some drawbacks:
-* it uses naive but aggressive replacement of the variables
+* it uses the naive but aggressive replacement of the variables
 * some things might be tricky to implement using `x-var`
 
 Let me know if you have any issues or suggestions.
