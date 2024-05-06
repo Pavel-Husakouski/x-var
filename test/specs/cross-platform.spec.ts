@@ -65,6 +65,12 @@ describe('cross platform', () => {
 
         expect(test).to.eq('PASSED EXPLICIT');
     });
+
+    it('should work being enclosed into single quotes', () => {
+        const test = script(`x-var 'echo $TEST'`);
+
+        expect(test).to.eq('PASSED IMPLICIT');
+    });
 });
 
 function script(command: string): string {

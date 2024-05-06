@@ -99,6 +99,24 @@ The output is empty as well. To fix this you might need to escape the dollar `$`
 ```
 However, this won't work being run under Windows! The solution - [Use the same syntax for all operating systems](#use-the-same-syntax-for-all-operating-systems)
 
+## Powershell
+
+Dealing with the Powershell in the cross-platform environment can be a hassle. By default, the npm scripts use cmd as a command processor.
+However, if the corresponding setting was overridden to Powershell, some scripts will not work as expected:
+```bash
+x-var TEST=PASSED echo \$TEST
+```
+This won't work. The command renders just '\'
+There are two possible options:
+Use `%`:
+```bash
+x-var TEST=PASSED echo %TEST%
+```
+Or escape the entire command:
+```bash
+x-var TEST=PASSED 'echo $TEST'
+```
+
 ## Linux only solution
 
 Despite the fact that Linux command line replaces the variables before the command is executed, there are still some useful features.
