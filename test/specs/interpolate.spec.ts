@@ -9,6 +9,12 @@ describe('interpolate', () => {
         expect(x).to.deep.eq(['hello']);
     });
 
+    it('should replace variables linux style curly braces', () => {
+        const x = interpolate([`\${test}`], { test: 'hello' }, 'linux');
+
+        expect(x).to.deep.eq(['hello']);
+    });
+
     it('should replace variables linux style escaped under windows', () => {
         const x = interpolate(['\\$test'], { test: 'hello' }, 'win32');
 

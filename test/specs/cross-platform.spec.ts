@@ -67,9 +67,17 @@ describe('cross platform', () => {
     });
 
     it('should work being enclosed into single quotes', () => {
+        process.env.TEST = 'passed!';
         const test = script(`x-var 'echo $TEST'`);
 
-        expect(test).to.eq('PASSED IMPLICIT');
+        expect(test).to.eq('passed!');
+    });
+
+    it('should work with curly braces', () => {
+        process.env.TEST = 'passed!';
+        const test = script(`x-var 'echo \${TEST}'`);
+
+        expect(test).to.eq('passed!');
     });
 });
 
