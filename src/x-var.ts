@@ -16,7 +16,7 @@ function main() {
 
     const newCommandLine = interpolate(cmdLine, { ...process.env, ...env });
 
-    return shell.exec(newCommandLine.join(' ')).code;
+    process.exit(shell.exec(newCommandLine.join(' ')).code);
 }
 
 main();
