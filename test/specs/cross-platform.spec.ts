@@ -79,6 +79,18 @@ describe('cross platform', () => {
 
         expect(test).to.eq('passed!');
     });
+
+    it('x-var should set process variables from the command line', () => {
+        const test = script(`x-var TEST=passed! "node -e 'console.log(process.env.TEST)'"`);
+
+        expect(test).to.eq('passed!');
+    });
+
+    it('x-env should set process variables from the command line', () => {
+        const test = script(`x-env TEST=passed! "node -e 'console.log(process.env.TEST)'"`);
+
+        expect(test).to.eq('passed!');
+    });
 });
 
 function script(command: string): string {
