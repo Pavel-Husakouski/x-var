@@ -2,6 +2,10 @@
 
 `cross-var` and `cross-env` revamped! Same syntax under Linux and Windows. `.env` supported!
 
+# Breaking changes
+
+* [v3.0.0 Variable value discrepancy](https://github.com/Pavel-Husakouski/x-var/issues/5)
+
 # Capabilities
 
 * Use the same syntax for all operating systems [Use the same syntax for all operating systems](#use-the-same-syntax-for-all-operating-systems)
